@@ -52,6 +52,7 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
           "Temperature Conversion",
         ),
       ),
+      backgroundColor: Colors.blue.shade400,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: OrientationBuilder(
