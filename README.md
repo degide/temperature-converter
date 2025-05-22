@@ -1,8 +1,8 @@
-# Temperature Converter
+## Temperature Converter
 
 A temperature conversion mobile application to allow the user to select either Fahrenheit-to-Celsius or Celsius-to-Fahrenheit conversions. The app is written in flutter.
 
-## Prerequisites
+### Prerequisites
 
 In order to contribute to or run this application, the following tools and dependecies must be installed:
 
@@ -10,14 +10,14 @@ In order to contribute to or run this application, the following tools and depen
 2. Android/iOS build tools
 3. Emulator (Android/iOS) or physical mobile device
 
-## Set Up
+### Set Up
 
 1. Clone the project: `git clone https://github.com/degide/temperature-converter.git`
 2. Navigate to source root folder: `cd temperature-converter`
 3. Install dependencies: `flutter pub get`
 4. Run the app on a device: `flutter run`
 
-## Flutter Resources
+### Flutter Resources
 
 A few resources to get you started if this is your Flutter project:
 
