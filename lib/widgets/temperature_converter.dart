@@ -5,10 +5,10 @@ import '../enums/converter_enums.dart';
 class TemperatureConverter extends StatefulWidget {
   const TemperatureConverter({
     super.key,
-    required this.convertedValue,
     required this.convert,
+    this.convertedValue,
   });
-  final String convertedValue;
+  final String? convertedValue;
   final Function(double? inputValue, ConversionType conversionType) convert;
 
   @override
@@ -46,7 +46,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                 }
               },
             ),
-            const Text("Fahrenheit to Celsius", style: TextStyle(fontSize: 16)),
+            const Text("Fahrenheit to Celsius", style: TextStyle(fontSize: 13)),
             Radio(
               value: ConversionType.celsiusToFahrenheit,
               groupValue: _conversionType,
@@ -58,7 +58,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                 }
               },
             ),
-            const Text("Celsius to Fahrenheit", style: TextStyle(fontSize: 16)),
+            const Text("Celsius to Fahrenheit", style: TextStyle(fontSize: 13)),
           ],
         ),
         Padding(
@@ -71,7 +71,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                width: 160,
+                width: 120,
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -88,7 +88,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                   keyboardType: TextInputType.number,
                   onChanged: (value) {
                     setState(() {
-                      _inputValue = double.tryParse(value) ?? 0;
+                      _inputValue = double.tryParse(value);
                     });
                   },
                 ),
@@ -101,7 +101,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                 ),
               ),
               Container(
-                width: 160,
+                width: 120,
                 height: 60,
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
@@ -109,8 +109,8 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                 ),
                 child: Center(
                   child: Text(
-                    widget.convertedValue,
-                    style: const TextStyle(fontSize: 25),
+                    widget.convertedValue ?? (_conversionType == ConversionType.celsiusToFahrenheit ? "F" : "°C"),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ),
               ),

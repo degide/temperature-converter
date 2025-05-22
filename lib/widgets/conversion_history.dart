@@ -30,7 +30,7 @@ class ConversionHistory extends StatelessWidget {
           final entry = _history[index];
           return ListTile(
             title: Text(
-              '${entry.conversionType == ConversionType.celsiusToFahrenheit ? "C to F" : "F to C"}: ${entry.value} = ${entry.result.toStringAsFixed(2)}',
+              '${entry.conversionType == ConversionType.celsiusToFahrenheit ? "°C to F" : "F to °C"}: ${entry.value} = ${entry.result.toStringAsFixed(2)}',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           );

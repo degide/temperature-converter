@@ -69,7 +69,7 @@ class _TemperatureConverterScreenState
                             convertedValue:
                                 _history.isNotEmpty
                                     ? _history.last.result.toStringAsFixed(2)
-                                    : "",
+                                    : null,
                             convert: _convert,
                           ),
                           Expanded(child: ConversionHistory(history: _history)),
@@ -82,7 +82,7 @@ class _TemperatureConverterScreenState
                               convertedValue:
                                   _history.isNotEmpty
                                       ? _history.last.result.toStringAsFixed(2)
-                                      : "",
+                                      : null,
                               convert: _convert,
                             ),
                           ),
