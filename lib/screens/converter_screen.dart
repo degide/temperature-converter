@@ -9,12 +9,10 @@ class TemperatureConverterScreen extends StatefulWidget {
   const TemperatureConverterScreen({super.key});
 
   @override
-  State<TemperatureConverterScreen> createState() =>
-      _TemperatureConverterScreenState();
+  State<TemperatureConverterScreen> createState() => _TemperatureConverterScreenState();
 }
 
-class _TemperatureConverterScreenState
-    extends State<TemperatureConverterScreen> {
+class _TemperatureConverterScreenState extends State<TemperatureConverterScreen> {
   final List<TemperatureConversion> _history = List.empty(growable: true);
 
   void _convert(double? inputValue, ConversionType conversionType) {
@@ -51,15 +49,25 @@ class _TemperatureConverterScreenState
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Converter",
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          "Temperature Conversion",
         ),
       ),
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: OrientationBuilder(
           builder: (context, orientation) {
             return Container(
               padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.white,
+                    Colors.blue.shade400,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
               child:
                   orientation == Orientation.portrait
                       ? Column(
@@ -76,19 +84,26 @@ class _TemperatureConverterScreenState
                         ],
                       )
                       : Row(
-                        children: [
-                          Expanded(
-                            child: TemperatureConverter(
-                              convertedValue:
-                                  _history.isNotEmpty
-                                      ? _history.last.result.toStringAsFixed(2)
-                                      : null,
-                              convert: _convert,
+                          children: [
+                            Expanded(
+                              child: SingleChildScrollView(
+                                child: TemperatureConverter(
+                                  convertedValue:
+                                      _history.isNotEmpty
+                                          ? _history.last.result.toStringAsFixed(2)
+                                          : null,
+                                  convert: _convert,
+                                ),
+                              ),
                             ),
-                          ),
-                          Expanded(child: ConversionHistory(history: _history)),
-                        ],
-                      ),
+                            Expanded(
+                              child: SizedBox(
+                                height: MediaQuery.of(context).size.height,
+                                child: ConversionHistory(history: _history),
+                              ),
+                            ),
+                          ],
+                        ),
             );
           },
         ),

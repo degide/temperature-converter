@@ -73,7 +73,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
               Container(
                 width: 120,
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
                 child: TextField(
@@ -104,7 +104,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                 width: 120,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(5)),
                 ),
                 child: Center(
