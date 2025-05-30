@@ -17,6 +17,20 @@ In order to contribute to or run this application, the following tools and depen
 3. Install dependencies: `flutter pub get`
 4. Run the app on a device: `flutter run`
 
+### Directory structure
+
+- `main.dart` The main entry of our application
+- `lib` The library folder
+  - `enums` Enumerations
+    - `converter_enums.dart` Contains `ConversionType` enum.
+  - `screens` Application screens/scenes widgets
+    - `converter_screen.dart` The temperature converter main screen widget
+  - `utils` The utilities folder
+    - `converter_utils.dart` Contains utility functions for our converter app
+  - `widgets` App custom widgets
+    - `converter_history.dart` Temperatur conversion history widget.
+    - `temperature_converter.dart` The temperature converter widget
+
 ### Flutter Resources
 
 A few resources to get you started if this is your Flutter project:
@@ -27,3 +41,6 @@ A few resources to get you started if this is your Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+### Contributors
+1. [degide <h.egide@alustudent.com>](https://github.com/degide)
