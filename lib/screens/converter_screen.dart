@@ -44,31 +44,27 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
     }
   }
 
+  void _clearHistory(){
+    setState(() {
+      _history.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Temperature Conversion",
-        ),
+        title: const Text("Temperature Conversion"),
+        centerTitle: true,
+        toolbarHeight: 60,
       ),
-      backgroundColor: Colors.blue.shade400,
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: OrientationBuilder(
           builder: (context, orientation) {
             return Container(
               padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.white,
-                    Colors.blue.shade400,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
               child:
                   orientation == Orientation.portrait
                       ? Column(
@@ -81,7 +77,15 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
                                     : null,
                             convert: _convert,
                           ),
-                          Expanded(child: ConversionHistory(history: _history)),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: ConversionHistory(
+                                history: _history, 
+                                clearHistory: _clearHistory,
+                              ),
+                            ),
+                          ),
                         ],
                       )
                       : Row(
@@ -100,7 +104,10 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
                             Expanded(
                               child: SizedBox(
                                 height: MediaQuery.of(context).size.height,
-                                child: ConversionHistory(history: _history),
+                                child: ConversionHistory(
+                                  history: _history,
+                                  clearHistory: _clearHistory,
+                                ),
                               ),
                             ),
                           ],

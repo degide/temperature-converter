@@ -15,7 +15,7 @@ class TemperatureConverterApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 0, 51, 93),
           foregroundColor: Colors.white,
           toolbarHeight: 50,
         )
