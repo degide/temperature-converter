@@ -56,7 +56,7 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
       appBar: AppBar(
         title: const Text("Temperature Conversion"),
         centerTitle: true,
-        toolbarHeight: 60,
+        toolbarHeight: 50,
       ),
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: true,

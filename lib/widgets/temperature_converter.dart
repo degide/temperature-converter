@@ -24,9 +24,9 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 8, right: 15, top: 10),
-          child: const Text(
+          child: Text(
             "Conversion:",
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
@@ -93,9 +93,9 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                   },
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: const Text(
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
                   "=",
                   style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
                 ),
@@ -103,9 +103,9 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
               Container(
                 width: 120,
                 height: 50,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 235, 235, 235),
-                  borderRadius: const BorderRadius.all(Radius.circular(5)),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 235, 235, 235),
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
                 ),
                 child: Center(
                   child: Text(
